@@ -7,8 +7,9 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",
-    "no-console": "warn",
+    "@typescript-eslint/no-unresolved": "off",
     "eslint-plugin-import/no-unresolved": "off",
+    "no-console": "warn",
     "no-debugger": "error",
     "no-duplicate-imports": "error",
     "no-else-return": "error",
@@ -21,6 +22,12 @@
   "settings": {
     "import/resolver": {
       "node": {
+        "extensions": [".js", ".ts"]
+      },
+      "alias": {
+        "map": [
+          ["@", "./src"]
+        ],
         "extensions": [".js", ".ts"]
       }
     }

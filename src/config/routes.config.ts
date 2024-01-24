@@ -1,3 +1,3 @@
-export const MODULES_ROUTES = {
+export default {
   users: "/users",
 };

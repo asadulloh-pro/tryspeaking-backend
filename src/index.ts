@@ -1,3 +1,4 @@
+import "./aliases";
 import express from "express";
 import modules from "./modules";
 import path from "path";
