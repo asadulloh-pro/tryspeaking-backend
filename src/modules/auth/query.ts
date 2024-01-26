@@ -1,6 +1,6 @@
-import { db } from "../../config/db.config";
+import { db } from "@/config/db.config";
 import { authOtps, verificationCodes } from "@/config/schema.config";
-import { IAuthOtps, IVerificationCode } from "../../types/user";
+import { IAuthOtps, IVerificationCode } from "@/types/user";
 
 export const getGmail = async (body: IAuthOtps) => {
   try {

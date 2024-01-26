@@ -18,7 +18,9 @@ export var authOtps = pgTable("auth_otp", {
     .primaryKey()
     .unique("auth_otp_id_unique"),
   gmail: varchar("gmial", { length: 256 }),
-  userId: bigint("user_id", { mode: "number" }).references(() => users.id),
+  userId: bigint("user_id", { mode: "number" }).references(() => users.id, {
+    onDelete: "cascade",
+  }),
 });
 
 export var verificationCodes = pgTable("verification_codes", {
@@ -26,5 +28,7 @@ export var verificationCodes = pgTable("verification_codes", {
     .primaryKey()
     .unique("verification_codes_id_unique"),
   code: varchar("code", { length: 128 }),
-  userId: bigint("user_id", { mode: "number" }).references(() => users.id),
+  userId: bigint("user_id", { mode: "number" }).references(() => users.id, {
+    onDelete: "cascade",
+  }),
 });

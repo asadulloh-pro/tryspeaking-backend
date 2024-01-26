@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { IAuthOtps } from "../../types/user";
+import { IAuthOtps } from "@/types/user";
 import { createVrificateCode, getGmail } from "./query";
 import { transporter } from "./utils";
 
