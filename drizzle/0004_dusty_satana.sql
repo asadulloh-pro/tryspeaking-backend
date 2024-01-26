@@ -1,1 +1,0 @@
-ALTER TABLE "auth_otp" DROP COLUMN IF EXISTS "phone";

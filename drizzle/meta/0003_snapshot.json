@@ -1,6 +1,6 @@
 {
-  "id": "6e6c32a7-e952-4652-a945-5800fe6cc76e",
-  "prevId": "9f0bafa6-6956-461e-a3f1-bdd0d59e9b82",
+  "id": "91bfe11c-e095-42eb-b6a2-bcf10f53cde7",
+  "prevId": "869d3c96-dd4c-4f13-a489-2b33d65e9420",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -14,17 +14,11 @@
           "primaryKey": true,
           "notNull": true
         },
-        "phone": {
-          "name": "phone",
+        "gmial": {
+          "name": "gmial",
           "type": "varchar(256)",
           "primaryKey": false,
-          "notNull": true
-        },
-        "email": {
-          "name": "email",
-          "type": "varchar(256)",
-          "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "user_id": {
           "name": "user_id",
@@ -50,15 +44,7 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {
-        "auth_otp_email_unique": {
-          "name": "auth_otp_email_unique",
-          "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
-        }
-      }
+      "uniqueConstraints": {}
     },
     "users": {
       "name": "users",
@@ -76,8 +62,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "username": {
-          "name": "username",
+        "user_name": {
+          "name": "user_name",
           "type": "varchar(256)",
           "primaryKey": false,
           "notNull": false
@@ -102,8 +88,8 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "verifacteion_codes": {
-      "name": "verifacteion_codes",
+    "verification_codes": {
+      "name": "verification_codes",
       "schema": "",
       "columns": {
         "id": {
@@ -116,7 +102,7 @@
           "name": "code",
           "type": "varchar(128)",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "user_id": {
           "name": "user_id",
@@ -127,9 +113,9 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "verifacteion_codes_user_id_users_id_fk": {
-          "name": "verifacteion_codes_user_id_users_id_fk",
-          "tableFrom": "verifacteion_codes",
+        "verification_codes_user_id_users_id_fk": {
+          "name": "verification_codes_user_id_users_id_fk",
+          "tableFrom": "verification_codes",
           "tableTo": "users",
           "columnsFrom": [
             "user_id"

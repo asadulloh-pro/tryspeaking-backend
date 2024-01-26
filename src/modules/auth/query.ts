@@ -1,12 +1,12 @@
 import { db } from "../../config/db.config";
-import { authOtps, verificationCodes } from "../..//config/schema.config";
+import { authOtps, verificationCodes } from "@/config/schema.config";
 import { IAuthOtps, IVerificationCode } from "../../types/user";
 
 export const getGmail = async (body: IAuthOtps) => {
   try {
     const response = await db.insert(authOtps).values({
       id: Date.now(),
-      email: body.email,
+      gmail: body.gmail,
       userId: body.userId,
     });
     return response;

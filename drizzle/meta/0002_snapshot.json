@@ -1,6 +1,6 @@
 {
-  "id": "9f0bafa6-6956-461e-a3f1-bdd0d59e9b82",
-  "prevId": "41b99561-08b4-4589-a8b9-6750eeb92062",
+  "id": "869d3c96-dd4c-4f13-a489-2b33d65e9420",
+  "prevId": "8a60dd4d-353e-480f-be9a-a057f35f788e",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -14,14 +14,8 @@
           "primaryKey": true,
           "notNull": true
         },
-        "phone": {
-          "name": "phone",
-          "type": "varchar(256)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "email": {
-          "name": "email",
+        "gmial": {
+          "name": "gmial",
           "type": "varchar(256)",
           "primaryKey": false,
           "notNull": false
@@ -50,7 +44,15 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {
+        "autu_otp_id_unique": {
+          "name": "autu_otp_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "id"
+          ]
+        }
+      }
     },
     "users": {
       "name": "users",
@@ -68,8 +70,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "username": {
-          "name": "username",
+        "user_name": {
+          "name": "user_name",
           "type": "varchar(256)",
           "primaryKey": false,
           "notNull": false
@@ -92,7 +94,65 @@
       },
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {
+        "users_id_unique": {
+          "name": "users_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "id"
+          ]
+        }
+      }
+    },
+    "verification_codes": {
+      "name": "verification_codes",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigint",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "code": {
+          "name": "code",
+          "type": "varchar(128)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "verification_codes_user_id_users_id_fk": {
+          "name": "verification_codes_user_id_users_id_fk",
+          "tableFrom": "verification_codes",
+          "tableTo": "users",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "verificationCodes_id_unique": {
+          "name": "verificationCodes_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "id"
+          ]
+        }
+      }
     }
   },
   "enums": {},

@@ -1,6 +1,6 @@
 {
-  "id": "f1a20c6a-55ef-4938-8e23-3f3f1c4a462f",
-  "prevId": "3891cdae-2b63-4c8f-8bb0-958f257e4811",
+  "id": "470ae6e1-8881-453f-b941-57da95119172",
+  "prevId": "6aa3b710-001d-4630-ac34-3f4cedeeb9f3",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -14,8 +14,8 @@
           "primaryKey": true,
           "notNull": true
         },
-        "email": {
-          "name": "email",
+        "gmial": {
+          "name": "gmial",
           "type": "varchar(256)",
           "primaryKey": false,
           "notNull": false
@@ -45,11 +45,11 @@
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "auth_otp_email_unique": {
-          "name": "auth_otp_email_unique",
+        "auth_otp_id_unique": {
+          "name": "auth_otp_id_unique",
           "nullsNotDistinct": false,
           "columns": [
-            "email"
+            "id"
           ]
         }
       }
@@ -70,8 +70,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "username": {
-          "name": "username",
+        "user_name": {
+          "name": "user_name",
           "type": "varchar(256)",
           "primaryKey": false,
           "notNull": false
@@ -94,10 +94,18 @@
       },
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {
+        "users_id_unique": {
+          "name": "users_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "id"
+          ]
+        }
+      }
     },
-    "verifaction_codes": {
-      "name": "verifaction_codes",
+    "verification_codes": {
+      "name": "verification_codes",
       "schema": "",
       "columns": {
         "id": {
@@ -121,9 +129,9 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "verifaction_codes_user_id_users_id_fk": {
-          "name": "verifaction_codes_user_id_users_id_fk",
-          "tableFrom": "verifaction_codes",
+        "verification_codes_user_id_users_id_fk": {
+          "name": "verification_codes_user_id_users_id_fk",
+          "tableFrom": "verification_codes",
           "tableTo": "users",
           "columnsFrom": [
             "user_id"
@@ -136,7 +144,15 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {
+        "verification_codes_id_unique": {
+          "name": "verification_codes_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "id"
+          ]
+        }
+      }
     }
   },
   "enums": {},

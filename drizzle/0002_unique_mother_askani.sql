@@ -1,1 +1,0 @@
-ALTER TABLE "auth_otp" ADD COLUMN "email" varchar(256);

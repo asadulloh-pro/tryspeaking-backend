@@ -7,7 +7,7 @@ export interface IUser {
 
 export interface IAuthOtps {
   id: number;
-  email: string;
+  gmail: string;
   userId: number;
 }
 

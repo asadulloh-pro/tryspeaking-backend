@@ -1,6 +1,6 @@
 {
-  "id": "246bca64-3469-497b-b59d-f7cf232a47dd",
-  "prevId": "6e6c32a7-e952-4652-a945-5800fe6cc76e",
+  "id": "14859e65-4a9a-4963-b4c3-2e4d45a249f4",
+  "prevId": "91bfe11c-e095-42eb-b6a2-bcf10f53cde7",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -14,11 +14,11 @@
           "primaryKey": true,
           "notNull": true
         },
-        "email": {
-          "name": "email",
+        "gmial": {
+          "name": "gmial",
           "type": "varchar(256)",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "user_id": {
           "name": "user_id",
@@ -45,11 +45,11 @@
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "auth_otp_email_unique": {
-          "name": "auth_otp_email_unique",
+        "auth_otp_id_unique": {
+          "name": "auth_otp_id_unique",
           "nullsNotDistinct": false,
           "columns": [
-            "email"
+            "id"
           ]
         }
       }
@@ -70,8 +70,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "username": {
-          "name": "username",
+        "user_name": {
+          "name": "user_name",
           "type": "varchar(256)",
           "primaryKey": false,
           "notNull": false
@@ -96,8 +96,8 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "verifacteion_codes": {
-      "name": "verifacteion_codes",
+    "verification_codes": {
+      "name": "verification_codes",
       "schema": "",
       "columns": {
         "id": {
@@ -110,7 +110,7 @@
           "name": "code",
           "type": "varchar(128)",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "user_id": {
           "name": "user_id",
@@ -121,9 +121,9 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "verifacteion_codes_user_id_users_id_fk": {
-          "name": "verifacteion_codes_user_id_users_id_fk",
-          "tableFrom": "verifacteion_codes",
+        "verification_codes_user_id_users_id_fk": {
+          "name": "verification_codes_user_id_users_id_fk",
+          "tableFrom": "verification_codes",
           "tableTo": "users",
           "columnsFrom": [
             "user_id"
